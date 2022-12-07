@@ -22,14 +22,14 @@ public class BalanceClientApplication {
     static List<Integer> readIdList = Arrays.asList(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
     static List<Integer> writeIdList = Arrays.asList(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9});
 
+    //Это конечно ужас, но вроде не является основной целью тестового
     public static void test() {
         Runnable r = ()-> {
             RestTemplate restTemplate = new RestTemplate();
             while (true) {
                 double readProbability = readQuota/(readQuota+writeQuota);
                 try {
-                    Double random = ThreadLocalRandom.current().nextDouble();
-                    if (random < readProbability) {
+                    if (ThreadLocalRandom.current().nextDouble() < readProbability) {
                         getBalance(restTemplate);
                     } else {
                         changeBalance(restTemplate);
@@ -38,7 +38,7 @@ public class BalanceClientApplication {
             }
         };
         for (int i = 0; i < threadCount; i++) {
-            new Thread(r, "TestThread " + i).run();
+            new Thread(r, "TestThread " + i).start();
         }
     }
 
@@ -50,7 +50,6 @@ public class BalanceClientApplication {
     private static void changeBalance(RestTemplate restTemplate) throws Exception {
         Integer randomUserId = writeIdList.get(ThreadLocalRandom.current().nextInt(0, 8));
         Long amount = ThreadLocalRandom.current().nextLong(0,10000);
-        String str = "http://localhost:8080/balance/changeBalance?userId=" + randomUserId + "&amount=" + amount;
         restTemplate.postForLocation("http://localhost:8080/balance/changeBalance?userId=" + randomUserId + "&amount=" + amount, null);
     }
 
