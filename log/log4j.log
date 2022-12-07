@@ -1,0 +1,15 @@
+2022-12-07 15:49:21 INFO  MetricServiceImpl:35 - Get Balance: 0
+2022-12-07 15:49:21 INFO  MetricServiceImpl:36 - Change Balance: 0
+2022-12-07 15:49:21 INFO  MetricServiceImpl:37 - All request: 0
+2022-12-07 15:50:21 INFO  MetricServiceImpl:35 - Get Balance: 1188
+2022-12-07 15:50:21 INFO  MetricServiceImpl:36 - Change Balance: 1222
+2022-12-07 15:50:21 INFO  MetricServiceImpl:37 - All request: 2410
+2022-12-07 15:51:21 INFO  MetricServiceImpl:35 - Get Balance: 4989
+2022-12-07 15:51:21 INFO  MetricServiceImpl:36 - Change Balance: 5049
+2022-12-07 15:51:21 INFO  MetricServiceImpl:37 - All request: 10038
+2022-12-07 15:52:21 INFO  MetricServiceImpl:35 - Get Balance: 6974
+2022-12-07 15:52:21 INFO  MetricServiceImpl:36 - Change Balance: 7036
+2022-12-07 15:52:21 INFO  MetricServiceImpl:37 - All request: 14010
+2022-12-07 15:53:21 INFO  MetricServiceImpl:35 - Get Balance: 4134
+2022-12-07 15:53:21 INFO  MetricServiceImpl:36 - Change Balance: 4022
+2022-12-07 15:53:21 INFO  MetricServiceImpl:37 - All request: 8156
